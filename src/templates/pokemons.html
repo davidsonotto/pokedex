@@ -3,13 +3,8 @@
     <span class="glyphicon glyphicon-search form-control-feedback"></span>
 </div>
 
-<progressbar ng-show='carregando' value="'80'" >
-    Carregando
-</progressbar>
-
-<div ng-hide='carregando'>
-    <div class='panel panel-default col-md-3 col-xs-6'
-            ng-repeat="pokemon in pokemons | filter: busca">
+<div>
+    <div class='panel panel-default col-md-3 col-xs-6' ng-repeat="pokemon in pokemons | filter: busca">
         <div class='panel-body'>
             <img ng-src='{{pokemon.img}}' class='pull-top' height="100px" ></img>
             <h4>#{{pokemon.id}}</h4>
