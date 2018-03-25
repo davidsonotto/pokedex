@@ -12,9 +12,25 @@
             $scope.carregando = true;
             Pokemons.getAll().then(function(pokemons){
                 $scope.pokemons = pokemons;
+                $scope.carregando = false;
             },function(){
                 $scope.pokemons = [];
+                $scope.carregando = false;
             });
         }
 
+        PokemonDetailController.$inject = ['$scope', '$state', 'Pokemons', 'Historico'];
+        function PokemonDetailController($scope, $state, Pokemons, Historico){
+            var pokeId = $state.params.id;
+
+            $scope.$state = $state;
+
+            $scope.pokemon = {};
+            Pokemons.get(pokeId).then(function(pokemon){
+                $scope.pokemon = pokemon;
+                Historico.pushState(pokemon.name)
+            },function(){
+                $scope.pokemon = {};
+            });
+        }
 })();

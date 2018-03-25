@@ -23,13 +23,6 @@
                 '' :{
                     templateUrl: "src/templates/pokemon.html",
                     controller: 'PokemonDetailController'
-                },
-                'evo@pokemon':{
-                    templateUrl: "src/templates/evo.html"
-                },
-                'moves@pokemon':{
-                    templateUrl: "src/templates/moves.html",
-                    controller: 'MovesController'
                 }
             }
         });

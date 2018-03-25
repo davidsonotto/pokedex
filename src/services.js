@@ -59,6 +59,20 @@
             });
             return defered.promise;
         }
+
+        function getSelect(){
+            var defered = $q.defer();
+            var url = PokeapiURL + 'pokedex/1/';
+            $http.get(url, {cache: true}).success(function(response){
+                var pokemons = response.pokemon;
+                pokemons = pokemons.map(buildPokemon);
+                defered.resolve(pokemons);
+            }).error(function(){
+                defered.reject([]);
+            });
+            return defered.promise;
+        }
+
     };
 
     Historico.$inject = ['$rootScope'];
