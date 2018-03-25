@@ -9,10 +9,7 @@
             <img ng-src='{{pokemon.img}}' class='pull-top' height="100px" ></img>
             <h4>#{{pokemon.id}}</h4>
             <h4>{{pokemon.name }}</h4>
-            <a ui-sref='pokemon({ id: pokemon.id })' class='btn btn-primary'>
-                Ver detalhes
-            </a>
-            <a ui-sref='pokemon({ id: pokemon.id })' class='btn btn-success'>
+            <a ui-sref='pokedex({ id: pokemon.id })' class='btn btn-success'>
                 Adicionar à pokedex
             </a>
         </div>
