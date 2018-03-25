@@ -3,10 +3,11 @@
     	<a class="navbar-brand" ui-sref="pokemons">Pokemons</a>
     </div>
     <ul class="nav navbar-nav">
-     <li>
-     	<a href="#">Pokedex</a>
-     </li>
-    <li ng-repeat='nav in navegacao'>
-        <a ng-click="back(navegacao.length - $index - 1)">{{nav.name}}</a>
-    </li>
+        <li>
+         	<a href="#">Pokedex</a>
+         </li>
+        <li ng-repeat='nav in navegacao'>
+            <a ng-click="back(navegacao.length - $index - 1)">{{nav.name}}</a>
+        </li>
+    </ul>
 </div>

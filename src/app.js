@@ -33,6 +33,14 @@
                 }
             }
         });
+         $stateProvider.state('pokedex', {
+            url: "/pokedex/:id",
+            views: {
+                '' :{
+                    templateUrl: "src/templates/pokedex.html",
+                }
+            }
+        });
 
          $urlRouterProvider.otherwise("/pokemons");
     }
