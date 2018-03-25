@@ -1,19 +1,11 @@
 <h2>Pokedex</h2>
 
-<progressbar ng-show='carregando' value="'80'" >
-    Carregando
-</progressbar>
 
-<div ng-hide='carregando'>
-    <div class='panel panel-default col-md-3 col-xs-6'
-            ng-repeat="pokemon in pokedex | filter: busca">
-        <div class='panel-body'>
-            <img ng-src='{{pokemon.img}}' class='pull-top' height="100px" ></img>
-            <h4>#{{pokemon.id}}</h4>
-            <h4>{{pokemon.name }}</h4>
-            <a ui-sref='pokemon({ id: pokemon.id })' class='btn btn-success'>
-                Adicionar à pokedex
-            </a>
-        </div>
+
+
+<div class='panel panel-default col-md-3 col-xs-6'>
+    <div class='panel-body'>
+        <p>...</p>
     </div>
 </div>
+

@@ -10,7 +10,7 @@
 
             $scope.pokemons = [];
             $scope.carregando = true;
-            Pokemons.getAll().then(function(pokemons){
+            Pokemons.getPokemons().then(function(pokemons){
                 $scope.pokemons = pokemons;
                 $scope.carregando = false;
             },function(){

@@ -8,7 +8,7 @@
     Pokemons.$inject = ['$http', '$q', 'PokeapiURL'];
     function Pokemons($http, $q, PokeapiURL){
         var service = {
-            getAll: getAll,
+            getPokemons: getPokemons,
             get: get
         }
 
@@ -47,12 +47,17 @@
             return pokemon;
         }
 
-        function getAll(){
+        function ordenacao(pokemonA, pokemonB){
+            return pokemonA.id < pokemonB.id ? -1 : 1;
+        }
+
+        function getPokemons(){
             var defered = $q.defer();
             var url = PokeapiURL + 'pokedex/1/';
             $http.get(url, {cache: true}).success(function(response){
                 var pokemons = response.pokemon;
                 pokemons = pokemons.map(buildPokemon);
+                 pokemons = pokemons.sort(ordenacao);
                 defered.resolve(pokemons);
             }).error(function(){
                 defered.reject([]);
@@ -60,7 +65,7 @@
             return defered.promise;
         }
 
-        function getSelect(){
+       function getSelect(){
             var defered = $q.defer();
             var url = PokeapiURL + 'pokedex/1/';
             $http.get(url, {cache: true}).success(function(response){
