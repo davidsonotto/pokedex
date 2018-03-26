@@ -6,11 +6,11 @@ Esta aplicação foi feita usando AngularJS e a Pokeapi (http://pokeapi.co/).
 - Node.js e NPM instalados
 
 ## Como executar
-- Instalar o NPM :
+- Instalar o NPM (CMD) :
 ```
 npm install
 ```
-- Acessar a pasta da aplicação e executar o seguinte comando:
+- Acessar a pasta ou URL do git da aplicação e executar o seguinte comando(CMD):
 ```shell
 npm start
 ```
